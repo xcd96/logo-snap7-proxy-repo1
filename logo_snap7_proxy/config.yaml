@@ -1,5 +1,5 @@
 name: "LOGO Snap7 Proxy"
-version: "1.0"
+version: "1.1"
 slug: "logo_snap7_proxy"
 description: "Proxy zur Steuerung LOGO! 0BA7 via Snap7 und MQTT"
 arch:
