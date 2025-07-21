@@ -1,0 +1,14 @@
+name: "LOGO Snap7 Proxy"
+version: "1.0"
+slug: "logo_snap7_proxy"
+description: "Proxy zur Steuerung LOGO! 0BA7 via Snap7 und MQTT"
+arch:
+  - amd64
+  - aarch64
+  - armv7
+  - i386
+startup: services
+boot: auto
+host_network: true
+options: {}
+schema: {}
