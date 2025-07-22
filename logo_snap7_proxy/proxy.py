@@ -2,7 +2,7 @@ import snap7
 import paho.mqtt.client as mqtt
 
 LOGO_IP = "192.168.0.250"
-MQTT_BROKER = "192.168.0.11"
+MQTT_BROKER = "127.0.0.1"  # ✅ Innerhalb Home Assistant immer 127.0.0.1 verwenden!
 LOGO_PORT = 102
 
 client = snap7.client.Client()
@@ -48,9 +48,11 @@ def on_message(client_mqtt, userdata, msg):
         print(f"❌ Fehler beim Verarbeiten: {e}")
 
 mqtt_client = mqtt.Client()
-mqtt_client.username_pw_set("logo_proxy", "supergeheim")  # 🔔 DAS IST DER FEHLENDE TEIL!
+mqtt_client.username_pw_set("logo_proxy", "supergeheim")  # ✅ Richtiger User + Passwort
 mqtt_client.on_connect = on_connect
 mqtt_client.on_message = on_message
+
+print("➡️ Connecting to MQTT with username=logo_proxy password=supergeheim on 127.0.0.1")
 
 try:
     mqtt_client.connect(MQTT_BROKER)
