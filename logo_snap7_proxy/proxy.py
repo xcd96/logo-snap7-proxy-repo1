@@ -48,10 +48,7 @@ def on_message(client_mqtt, userdata, msg):
         print(f"❌ Fehler beim Verarbeiten: {e}")
 
 mqtt_client = mqtt.Client()
-
-# ➜ HIER kommt die wichtige Zeile für Benutzername + Passwort:
-mqtt_client.username_pw_set("logo_proxy", "supergeheim")
-
+mqtt_client.username_pw_set("logo_proxy", "supergeheim")  # 🔔 DAS IST DER FEHLENDE TEIL!
 mqtt_client.on_connect = on_connect
 mqtt_client.on_message = on_message
 
